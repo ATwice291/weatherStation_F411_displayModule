@@ -1,0 +1,112 @@
+cmake_minimum_required(VERSION 3.22)
+
+#
+# This file is generated only once,
+# and is not re-generated if converter is called multiple times.
+#
+# User is free to modify the file as much as necessary
+#
+
+# Setup compiler settings
+set(CMAKE_C_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_C_STANDARD_REQUIRED ON)
+set(CMAKE_C_EXTENSIONS ON)
+
+
+# Define the build type
+if(NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE "Debug")
+endif()
+
+# Set the project name
+set(CMAKE_PROJECT_NAME F411_WEATHER_MAIN_MODULE)
+set(LV_CONF_BUILD_DISABLE_DEMOS 1)
+set(LV_CONF_BUILD_DISABLE_EXAMPLES 1)
+set(LV_CONF_BUILD_DISABLE_THORVG_INTERNAL 1)
+
+# Include toolchain file
+include("cmake/gcc-arm-none-eabi.cmake")
+
+# Enable compile command to ease indexing with e.g. clangd
+set(CMAKE_EXPORT_COMPILE_COMMANDS TRUE)
+
+# Enable CMake support for ASM and C languages
+enable_language(C CXX ASM)
+
+# Core project settings
+project(${CMAKE_PROJECT_NAME})
+message("Build type: " ${CMAKE_BUILD_TYPE})
+
+# Create an executable object type
+add_executable(${CMAKE_PROJECT_NAME})
+
+# Add STM32CubeMX generated sources
+add_subdirectory(cmake/stm32cubemx)
+add_subdirectory(lvgl)
+
+
+# Link directories setup
+target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
+    # Add user defined library search paths
+)
+
+# Add sources to executable
+target_sources(${CMAKE_PROJECT_NAME} PRIVATE
+    # Add user sources here
+    Gui/ui/ui_image_arrow.c
+    Gui/ui/ui_image_humid.c
+    Gui/ui/ui_image_i01d.c
+    Gui/ui/ui_image_i01n.c
+    Gui/ui/ui_image_i02d.c
+    Gui/ui/ui_image_i02n.c
+    Gui/ui/ui_image_i03d.c
+    Gui/ui/ui_image_i03n.c
+    Gui/ui/ui_image_i04d.c
+    Gui/ui/ui_image_i04n.c
+    Gui/ui/ui_image_i09d.c
+    Gui/ui/ui_image_i09n.c
+    Gui/ui/ui_image_i10d.c
+    Gui/ui/ui_image_i10n.c
+    Gui/ui/ui_image_i11d.c
+    Gui/ui/ui_image_i11n.c
+    Gui/ui/ui_image_i13d.c
+    Gui/ui/ui_image_i13n.c
+    Gui/ui/ui_image_i50d.c
+    Gui/ui/ui_image_i50n.c
+    Gui/ui/actions.c
+    Gui/ui/images.c
+    Gui/ui/screens.c
+    Gui/ui/styles.c
+    Gui/ui/ui_font_pf_din_pro_medium.c
+    Gui/ui/ui.c
+)
+
+# Add include paths
+target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
+    # Add user defined include paths
+    Drivers
+    Core/ui
+    Drivers/Periph
+    Drivers/w25qxx
+    Drivers/at24cxx
+    Drivers/ds3231
+    Drivers/ssd1306
+    Drivers/mcp2515
+    Drivers/st7735
+    Gui/ui
+    lvgl
+    lvgl/src
+)
+
+# Add project symbols (macros)
+target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE
+    # Add user defined symbols
+)
+
+# Add linked libraries
+target_link_libraries(${CMAKE_PROJECT_NAME}
+    stm32cubemx
+    # Add user defined libraries
+    lvgl
+)
