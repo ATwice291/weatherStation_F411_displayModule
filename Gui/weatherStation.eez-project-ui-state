@@ -1,10 +1,11 @@
 {
   "navigation": {
     "selectedUserPageObject": "[weatherStation.eez-project]:/userPages/0",
+    "selectedActionObject": "[weatherStation.eez-project]:/actions/0",
     "selectedGlobalVariableObject": "[weatherStation.eez-project]:/variables/globalVariables/2",
     "selectedStyleObject": "[weatherStation.eez-project]:/lvglStyles/styles/0",
     "selectedFontObject": "[weatherStation.eez-project]:/fonts/0",
-    "selectedBitmapObject": "[weatherStation.eez-project]:/bitmaps/19",
+    "selectedBitmapObject": "[weatherStation.eez-project]:/bitmaps/2",
     "subnavigationSelectedItems": {
       "variables-tab/sub-navigation/selected-item": "Global"
     }
@@ -27,6 +28,7 @@
           },
           {
             "type": "border",
+            "selected": 2,
             "size": 240,
             "location": "right",
             "children": [
@@ -74,7 +76,7 @@
           },
           {
             "type": "border",
-            "selected": 0,
+            "selected": 1,
             "location": "bottom",
             "children": [
               {
@@ -192,7 +194,7 @@
             {
               "type": "tabset",
               "id": "EDITORS",
-              "weight": 59.69668542839275,
+              "weight": 69.24568965517241,
               "selected": 1,
               "enableDeleteWhenEmpty": false,
               "enableClose": false,
@@ -226,7 +228,7 @@
             {
               "type": "tabset",
               "id": "#ce9907fc-bbdf-45e1-b2e6-ae3eadbfa626",
-              "weight": 25.303314571607256,
+              "weight": 15.754310344827585,
               "children": [
                 {
                   "type": "tab",
@@ -409,8 +411,7 @@
                       "enableClose": false,
                       "icon": "material:code"
                     }
-                  ],
-                  "active": true
+                  ]
                 },
                 {
                   "type": "tabset",
@@ -462,7 +463,8 @@
                   },
                   "icon": "svg:page"
                 }
-              ]
+              ],
+              "active": true
             },
             {
               "type": "row",
@@ -992,18 +994,18 @@
     "[weatherStation.eez-project]:/userPages/0[flow-state]": {
       "selection": {
         "0": {
-          "0": {},
-          "2": {
+          "5": {
             "0": {},
             "1": {},
-            "2": {}
+            "2": {},
+            "3": {}
           }
         }
       },
       "transform": {
         "translate": {
           "x": -365.2240259740261,
-          "y": -317.16818181818184
+          "y": -217.1681818181819
         },
         "scale": 3
       },
@@ -1035,9 +1037,7 @@
   "lvglPart": "MAIN",
   "lvglState": "DEFAULT",
   "lvglExpandedPropertiesGroup": [
-    "TEXT",
-    "BORDER",
-    "LINE"
+    "TEXT"
   ],
   "showInactiveFlowsInDebugger": true,
   "globalFlowZoom": true,

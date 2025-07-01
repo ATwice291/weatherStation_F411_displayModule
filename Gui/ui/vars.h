@@ -31,7 +31,6 @@ extern void set_var_temperature(const char *value);
 
 extern uint16_t get_wind_direction();
 
-
 #ifdef __cplusplus
 }
 #endif

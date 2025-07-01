@@ -135,16 +135,20 @@ void create_screen_main() {
                     lv_obj_add_event_cb(obj, action_chart_invalidate, LV_EVENT_VALUE_CHANGED, (void *)0);
                     lv_obj_set_style_border_width(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
                     lv_obj_set_style_radius(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_pad_top(obj, 1, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_pad_bottom(obj, 1, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_pad_left(obj, 1, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_pad_right(obj, 1, LV_PART_MAIN | LV_STATE_DEFAULT);
                     lv_chart_set_range(obj, LV_CHART_AXIS_PRIMARY_X, -1, 41);
                     lv_obj_refresh_ext_draw_size(obj);
                     lv_chart_series_t *ser = lv_chart_add_series(obj, lv_palette_main(LV_PALETTE_DEEP_ORANGE), LV_CHART_AXIS_PRIMARY_Y);
                     lv_chart_set_type(obj, LV_CHART_TYPE_SCATTER);
-                    lv_chart_set_point_count(obj, 4);
+                    lv_chart_set_point_count(obj, 5);
                     lv_chart_set_next_value2(obj, ser, 5, 22);
                     lv_chart_set_next_value2(obj, ser, 15, 21);
                     lv_chart_set_next_value2(obj, ser, 25, 20);
                     lv_chart_set_next_value2(obj, ser, 35, 20);
-                    //lv_chart_set_next_value2(obj, ser, 36, 20);
+                    lv_chart_set_next_value2(obj, ser, 36, 20);
                     lv_chart_refresh(obj);
                 }
             }
@@ -165,24 +169,6 @@ void tick_screen_main() {
         }
     }
     {
-        const char *new_val = get_var_temperature();
-        const char *cur_val = lv_label_get_text(objects.lbl_temperature_black);
-        if (strcmp(new_val, cur_val) != 0) {
-            tick_value_change_obj = objects.lbl_temperature_black;
-            lv_label_set_text(objects.lbl_temperature_black, new_val);
-            tick_value_change_obj = NULL;
-        }
-    }
-    {
-        const char *new_val = get_var_temperature();
-        const char *cur_val = lv_label_get_text(objects.lbl_temperature_white);
-        if (strcmp(new_val, cur_val) != 0) {
-            tick_value_change_obj = objects.lbl_temperature_white;
-            lv_label_set_text(objects.lbl_temperature_white, new_val);
-            tick_value_change_obj = NULL;
-        }
-    }
-    {
         const char *new_val = get_var_humidity();
         const char *cur_val = lv_label_get_text(objects.lbl_humidity);
         if (strcmp(new_val, cur_val) != 0) {
@@ -197,6 +183,24 @@ void tick_screen_main() {
         if (strcmp(new_val, cur_val) != 0) {
             tick_value_change_obj = objects.lbl_wind_speed;
             lv_label_set_text(objects.lbl_wind_speed, new_val);
+            tick_value_change_obj = NULL;
+        }
+    }
+    {
+        const char *new_val = get_var_temperature();
+        const char *cur_val = lv_label_get_text(objects.lbl_temperature_black);
+        if (strcmp(new_val, cur_val) != 0) {
+            tick_value_change_obj = objects.lbl_temperature_black;
+            lv_label_set_text(objects.lbl_temperature_black, new_val);
+            tick_value_change_obj = NULL;
+        }
+    }
+    {
+        const char *new_val = get_var_temperature();
+        const char *cur_val = lv_label_get_text(objects.lbl_temperature_white);
+        if (strcmp(new_val, cur_val) != 0) {
+            tick_value_change_obj = objects.lbl_temperature_white;
+            lv_label_set_text(objects.lbl_temperature_white, new_val);
             tick_value_change_obj = NULL;
         }
     }
