@@ -307,4 +307,8 @@ extern "C" uint16_t get_wind_direction() {
   }
   return windDirection;
 }
+
+extern "C" const char *get_var_hour1() {
+  return temperatureBuffer;
+}
 //extern void set_var_temperature(int32_t value);

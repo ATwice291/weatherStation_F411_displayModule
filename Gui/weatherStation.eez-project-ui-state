@@ -2,10 +2,10 @@
   "navigation": {
     "selectedUserPageObject": "[weatherStation.eez-project]:/userPages/0",
     "selectedActionObject": "[weatherStation.eez-project]:/actions/0",
-    "selectedGlobalVariableObject": "[weatherStation.eez-project]:/variables/globalVariables/2",
+    "selectedGlobalVariableObject": "[weatherStation.eez-project]:/variables/globalVariables/3",
     "selectedStyleObject": "[weatherStation.eez-project]:/lvglStyles/styles/0",
     "selectedFontObject": "[weatherStation.eez-project]:/fonts/0",
-    "selectedBitmapObject": "[weatherStation.eez-project]:/bitmaps/2",
+    "selectedBitmapObject": "[weatherStation.eez-project]:/bitmaps/19",
     "subnavigationSelectedItems": {
       "variables-tab/sub-navigation/selected-item": "Global"
     }
@@ -194,7 +194,7 @@
             {
               "type": "tabset",
               "id": "EDITORS",
-              "weight": 69.24568965517241,
+              "weight": 66.76672920575359,
               "selected": 1,
               "enableDeleteWhenEmpty": false,
               "enableClose": false,
@@ -228,7 +228,7 @@
             {
               "type": "tabset",
               "id": "#ce9907fc-bbdf-45e1-b2e6-ae3eadbfa626",
-              "weight": 15.754310344827585,
+              "weight": 18.233270794246405,
               "children": [
                 {
                   "type": "tab",
@@ -1037,7 +1037,8 @@
   "lvglPart": "MAIN",
   "lvglState": "DEFAULT",
   "lvglExpandedPropertiesGroup": [
-    "TEXT"
+    "TEXT",
+    "BACKGROUND"
   ],
   "showInactiveFlowsInDebugger": true,
   "globalFlowZoom": true,

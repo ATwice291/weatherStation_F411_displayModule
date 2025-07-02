@@ -127,6 +127,66 @@ void create_screen_main() {
                     lv_label_set_text(obj, "Overcast clouds");
                 }
                 {
+                    lv_obj_t *obj = lv_image_create(parent_obj);
+                    lv_obj_set_pos(obj, 128, 8);
+                    lv_obj_set_size(obj, 32, 32);
+                    lv_image_set_src(obj, &img_i03n);
+                    lv_image_set_scale(obj, 96);
+                }
+                {
+                    lv_obj_t *obj = lv_image_create(parent_obj);
+                    lv_obj_set_pos(obj, 160, 8);
+                    lv_obj_set_size(obj, 32, 32);
+                    lv_image_set_src(obj, &img_i09d);
+                    lv_image_set_scale(obj, 96);
+                }
+                {
+                    lv_obj_t *obj = lv_image_create(parent_obj);
+                    lv_obj_set_pos(obj, 192, 8);
+                    lv_obj_set_size(obj, 32, 32);
+                    lv_image_set_src(obj, &img_i11n);
+                    lv_image_set_scale(obj, 96);
+                }
+                {
+                    lv_obj_t *obj = lv_image_create(parent_obj);
+                    lv_obj_set_pos(obj, 224, 8);
+                    lv_obj_set_size(obj, 32, 32);
+                    lv_image_set_src(obj, &img_i50n);
+                    lv_image_set_scale(obj, 96);
+                }
+                {
+                    lv_obj_t *obj = lv_label_create(parent_obj);
+                    objects.obj0 = obj;
+                    lv_obj_set_pos(obj, 128, 0);
+                    lv_obj_set_size(obj, 32, LV_SIZE_CONTENT);
+                    lv_obj_set_style_text_align(obj, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_label_set_text(obj, "");
+                }
+                {
+                    lv_obj_t *obj = lv_label_create(parent_obj);
+                    objects.obj1 = obj;
+                    lv_obj_set_pos(obj, 161, 0);
+                    lv_obj_set_size(obj, 32, LV_SIZE_CONTENT);
+                    lv_obj_set_style_text_align(obj, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_label_set_text(obj, "");
+                }
+                {
+                    lv_obj_t *obj = lv_label_create(parent_obj);
+                    objects.obj2 = obj;
+                    lv_obj_set_pos(obj, 192, 0);
+                    lv_obj_set_size(obj, 32, LV_SIZE_CONTENT);
+                    lv_obj_set_style_text_align(obj, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_label_set_text(obj, "");
+                }
+                {
+                    lv_obj_t *obj = lv_label_create(parent_obj);
+                    objects.obj3 = obj;
+                    lv_obj_set_pos(obj, 224, 0);
+                    lv_obj_set_size(obj, 32, LV_SIZE_CONTENT);
+                    lv_obj_set_style_text_align(obj, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_label_set_text(obj, "");
+                }
+                {
                     // graph_forecast
                     lv_obj_t *obj = lv_chart_create(parent_obj);
                     objects.graph_forecast = obj;
@@ -139,6 +199,7 @@ void create_screen_main() {
                     lv_obj_set_style_pad_bottom(obj, 1, LV_PART_MAIN | LV_STATE_DEFAULT);
                     lv_obj_set_style_pad_left(obj, 1, LV_PART_MAIN | LV_STATE_DEFAULT);
                     lv_obj_set_style_pad_right(obj, 1, LV_PART_MAIN | LV_STATE_DEFAULT);
+                    lv_obj_set_style_bg_opa(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
                     lv_chart_set_range(obj, LV_CHART_AXIS_PRIMARY_X, -1, 41);
                     lv_obj_refresh_ext_draw_size(obj);
                     lv_chart_series_t *ser = lv_chart_add_series(obj, lv_palette_main(LV_PALETTE_DEEP_ORANGE), LV_CHART_AXIS_PRIMARY_Y);
@@ -206,6 +267,42 @@ void tick_screen_main() {
     }
     action_main_info_auto_wiggle(objects.c_temp_and_graph);
     lv_chart_refresh(objects.graph_forecast);
+    {
+        const char *new_val = get_var_hour1();
+        const char *cur_val = lv_label_get_text(objects.obj0);
+        if (strcmp(new_val, cur_val) != 0) {
+            tick_value_change_obj = objects.obj0;
+            lv_label_set_text(objects.obj0, new_val);
+            tick_value_change_obj = NULL;
+        }
+    }
+    {
+        const char *new_val = get_var_hour1();
+        const char *cur_val = lv_label_get_text(objects.obj1);
+        if (strcmp(new_val, cur_val) != 0) {
+            tick_value_change_obj = objects.obj1;
+            lv_label_set_text(objects.obj1, new_val);
+            tick_value_change_obj = NULL;
+        }
+    }
+    {
+        const char *new_val = get_var_hour1();
+        const char *cur_val = lv_label_get_text(objects.obj2);
+        if (strcmp(new_val, cur_val) != 0) {
+            tick_value_change_obj = objects.obj2;
+            lv_label_set_text(objects.obj2, new_val);
+            tick_value_change_obj = NULL;
+        }
+    }
+    {
+        const char *new_val = get_var_hour1();
+        const char *cur_val = lv_label_get_text(objects.obj3);
+        if (strcmp(new_val, cur_val) != 0) {
+            tick_value_change_obj = objects.obj3;
+            lv_label_set_text(objects.obj3, new_val);
+            tick_value_change_obj = NULL;
+        }
+    }
 }
 
 

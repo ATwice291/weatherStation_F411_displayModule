@@ -18,6 +18,10 @@ typedef struct _objects_t {
     lv_obj_t *lbl_temperature_black;
     lv_obj_t *lbl_temperature_white;
     lv_obj_t *graph_forecast;
+    lv_obj_t *obj0;
+    lv_obj_t *obj1;
+    lv_obj_t *obj2;
+    lv_obj_t *obj3;
 } objects_t;
 
 extern objects_t objects;
