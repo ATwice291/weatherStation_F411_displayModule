@@ -74,6 +74,7 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     Gui/ui/ui_image_i13n.c
     Gui/ui/ui_image_i50d.c
     Gui/ui/ui_image_i50n.c
+    Gui/ui/ui_image_temperature.c
     Gui/ui/actions.c
     Gui/ui/images.c
     Gui/ui/screens.c

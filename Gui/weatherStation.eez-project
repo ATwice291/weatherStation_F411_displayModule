@@ -225,6 +225,14 @@
         "defaultValue": "0",
         "persistent": false,
         "native": false
+      },
+      {
+        "objID": "6f876b0e-22b7-4c83-bcdc-df70012e99a0",
+        "name": "pressure",
+        "type": "string",
+        "defaultValue": "\"\"",
+        "persistent": false,
+        "native": false
       }
     ],
     "structures": [],
@@ -498,7 +506,7 @@
                   "pivotX": 17,
                   "pivotY": 17,
                   "zoom": 256,
-                  "angle": 900,
+                  "angle": 2300,
                   "innerAlign": "CENTER"
                 },
                 {
@@ -636,7 +644,7 @@
                   },
                   "group": "",
                   "groupIndex": 0,
-                  "text": "humidity",
+                  "text": "pressure",
                   "textType": "expression",
                   "longMode": "WRAP",
                   "recolor": false,
@@ -1387,7 +1395,7 @@
                   },
                   "group": "",
                   "groupIndex": 0,
-                  "text": "hour1",
+                  "text": "temperature_hour1",
                   "textType": "expression",
                   "longMode": "WRAP",
                   "recolor": false,

@@ -7,6 +7,7 @@
 #include "spi.hpp"
 #include "mcp2515.hpp"
 #include "st7735.hpp"
+#include "exti.hpp"
 
 //constexpr Prescalers Psc = {1, 2, 1}; 
 using psc = Prescalers<1,2,1>;
@@ -81,6 +82,8 @@ using spi1Params = SpiParams<SpiInstance::spi1,
                              DmaTxSpi1>;
 using Spi1 = Spi<spi1Params, SystemClock>;
 
+using MCP2515_INT = Gpio<GpioPort::B, GpioPin::P3, GpioMode::In, GpioSpeed::Low, GpioPull::Up, GpioAf::AF15>;
+using MCP2515_INT_EXTI = Exti<GpioPort::B, GpioPin::P3>;
 
 //using ExtClock = DS3231<I2c3, (0x68<<1)>;
 //using OledDisplay = SSD1306<I2c1, (0x3C<<1)>;

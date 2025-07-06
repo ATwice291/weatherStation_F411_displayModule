@@ -62,6 +62,8 @@ private:
         REG_CNF3 = 0x28,
         REG_CNF2 = 0x29,
         REG_CNF1 = 0x2A,
+        REG_CANINTE = 0x2B,
+        REG_EFLG = 0x2D,
         REG_TXB0CTRL = 0x30,
         REG_TXB0SIDH = 0x31,
         REG_TXB0SIDL = 0x32,
@@ -111,6 +113,8 @@ public:
         writeRegister(REG_CNF1, config::getCNF1());
         writeRegister(REG_CNF2, config::getCNF2());
         writeRegister(REG_CNF3, config::getCNF3());
+        
+        writeRegister(REG_CANINTE, 0x23);
         
         bitModify(REG_CANCTRL, 0x08, 0x08); //One Shot Mode
 

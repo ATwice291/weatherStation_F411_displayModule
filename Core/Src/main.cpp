@@ -77,6 +77,12 @@ void spi2_init() {
 
   Spi2::init();
   Spi2::enable();
+  
+  MCP2515_INT::init();
+  MCP2515_INT_EXTI::init(false, true);
+  MCP2515_INT_EXTI::interruptEnable();
+  NVIC_EnableIRQ(EXTI3_IRQn);
+  NVIC_SetPriority(EXTI3_IRQn, 6);
 }
 
 void dmaTxComplete() {
