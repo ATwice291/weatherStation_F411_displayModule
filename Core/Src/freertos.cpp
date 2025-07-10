@@ -320,7 +320,7 @@ void monitorFlush(lv_display_t * disp, const lv_area_t * area, uint8_t * px_map)
   uint16_t w = area->x2-area->x1+1;
   uint16_t h = area->y2-area->y1+1;
 
-  lv_draw_sw_rgb565_swap(px_map, w*h);
+  //lv_draw_sw_rgb565_swap(px_map, w*h);
 
   display.drawImage(area->x1, area->y1, w, h, (const uint16_t *)px_map);
 }

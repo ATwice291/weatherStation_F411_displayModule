@@ -1,11 +1,11 @@
 {
   "navigation": {
-    "selectedUserPageObject": "[weatherStation.eez-project]:/userPages/0",
+    "selectedUserPageObject": "[weatherStation.eez-project]:/userPages/1",
     "selectedActionObject": "[weatherStation.eez-project]:/actions/0",
     "selectedGlobalVariableObject": "[weatherStation.eez-project]:/variables/globalVariables/6",
     "selectedStyleObject": "[weatherStation.eez-project]:/lvglStyles/styles/0",
     "selectedFontObject": "[weatherStation.eez-project]:/fonts/0",
-    "selectedBitmapObject": "[weatherStation.eez-project]:/bitmaps/4",
+    "selectedBitmapObject": "[weatherStation.eez-project]:/bitmaps/2",
     "subnavigationSelectedItems": {
       "variables-tab/sub-navigation/selected-item": "Global"
     }
@@ -129,7 +129,6 @@
                   "type": "tabset",
                   "id": "#8f747405-5d6d-4180-9b48-7ddf1bf4d092",
                   "weight": 1,
-                  "selected": 1,
                   "enableClose": false,
                   "children": [
                     {
@@ -226,16 +225,15 @@
                 {
                   "type": "tab",
                   "id": "#5779ca91-57c3-4c3e-9a41-963ea8898102",
-                  "name": "Main",
+                  "name": "images",
                   "component": "editor",
                   "config": {
-                    "objectPath": "[weatherStation.eez-project]:/userPages/0",
+                    "objectPath": "[weatherStation.eez-project]:/userPages/1",
                     "permanent": false
                   },
                   "icon": "svg:page"
                 }
-              ],
-              "active": true
+              ]
             },
             {
               "type": "tabset",
@@ -258,7 +256,8 @@
                   "enableClose": false,
                   "icon": "svg:components"
                 }
-              ]
+              ],
+              "active": true
             }
           ]
         }
@@ -1005,25 +1004,14 @@
   "objects": {
     "[weatherStation.eez-project]:/userPages/0[flow-state]": {
       "selection": {
-        "0": {
-          "1": {
-            "5": {},
-            "6": {},
-            "7": {},
-            "8": {},
-            "9": {},
-            "10": {
-              "$selected": true
-            }
-          }
-        }
+        "0": {}
       },
       "transform": {
         "translate": {
-          "x": -344.6493506493507,
-          "y": -269.77878787878785
+          "x": -488.27467532467534,
+          "y": -170.18939393939394
         },
-        "scale": 4
+        "scale": 2
       },
       "timeline": {
         "isEditorActive": false,
@@ -1057,6 +1045,30 @@
         "secondToPx": 200,
         "scrollLeft": 0
       }
+    },
+    "[weatherStation.eez-project]:/userPages/1[flow-state]": {
+      "selection": {
+        "0": {
+          "1": {
+            "0": {
+              "$selected": true
+            }
+          }
+        }
+      },
+      "transform": {
+        "translate": {
+          "x": -64,
+          "y": -80
+        },
+        "scale": 2
+      },
+      "timeline": {
+        "isEditorActive": false,
+        "position": 0,
+        "secondToPx": 200,
+        "scrollLeft": 0
+      }
     }
   },
   "activeOutputSection": 0,
@@ -1072,10 +1084,12 @@
   "logsPanelFilter": "all",
   "selectedStylePropertyName": "",
   "lvglPart": "MAIN",
-  "lvglState": "DEFAULT",
-  "lvglExpandedPropertiesGroup": [],
+  "lvglState": "SCROLLED",
+  "lvglExpandedPropertiesGroup": [
+    "ARC"
+  ],
   "showInactiveFlowsInDebugger": true,
   "globalFlowZoom": true,
-  "flowZoom": 4,
+  "flowZoom": 2,
   "implementationLanguage": "C"
 }

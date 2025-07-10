@@ -102,7 +102,7 @@ void create_screen_main() {
                     objects.img_weather = obj;
                     lv_obj_set_pos(obj, 48, 12);
                     lv_obj_set_size(obj, 80, 64);
-                    lv_image_set_src(obj, &img_i11n);
+                    lv_image_set_src(obj, &img_i01d);
                 }
                 {
                     // lbl_humidity
@@ -188,7 +188,7 @@ void create_screen_main() {
                     objects.img_weather_hour1 = obj;
                     lv_obj_set_pos(obj, 128, 18);
                     lv_obj_set_size(obj, 32, 32);
-                    lv_image_set_src(obj, &img_i03n);
+                    lv_image_set_src(obj, &img_i02d);
                     lv_image_set_scale(obj, 96);
                 }
                 {
@@ -206,7 +206,7 @@ void create_screen_main() {
                     objects.img_weather_hour3 = obj;
                     lv_obj_set_pos(obj, 192, 18);
                     lv_obj_set_size(obj, 32, 32);
-                    lv_image_set_src(obj, &img_i11n);
+                    lv_image_set_src(obj, &img_i13d);
                     lv_image_set_scale(obj, 96);
                 }
                 {
@@ -215,7 +215,7 @@ void create_screen_main() {
                     objects.img_weather_hour4 = obj;
                     lv_obj_set_pos(obj, 224, 18);
                     lv_obj_set_size(obj, 32, 32);
-                    lv_image_set_src(obj, &img_i50n);
+                    lv_image_set_src(obj, &img_i50d);
                     lv_image_set_scale(obj, 96);
                 }
                 {
@@ -254,12 +254,13 @@ void create_screen_main() {
                     lv_obj_set_style_text_align(obj, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN | LV_STATE_DEFAULT);
                     lv_label_set_text(obj, "");
                 }
-                /*{
+                {
                     lv_obj_t *obj = lv_image_create(parent_obj);
                     lv_obj_set_pos(obj, 352, 4);
                     lv_obj_set_size(obj, 32, 32);
-                    lv_image_set_src(obj, &img_temperature);
-                }*/
+                    lv_image_set_src(obj, &img_arrow);
+                    lv_obj_add_flag(obj, LV_OBJ_FLAG_HIDDEN);
+                }
                 {
                     // lbl_temperature_hour1
                     lv_obj_t *obj = lv_label_create(parent_obj);

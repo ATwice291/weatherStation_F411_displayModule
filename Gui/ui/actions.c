@@ -130,13 +130,13 @@ const lv_image_dsc_t* getImageByIndex(uint8_t newIcon) {
         case  50: newImage = &img_i50d; break;
         case 129: newImage = &img_i01n; break;
         case 130: newImage = &img_i02n; break;
-        case 131: newImage = &img_i03n; break;
-        case 132: newImage = &img_i04n; break;
-        case 137: newImage = &img_i09n; break;
+        case 131: newImage = &img_i03d; break;
+        case 132: newImage = &img_i04d; break;
+        case 137: newImage = &img_i09d; break;
         case 138: newImage = &img_i10n; break;
-        case 139: newImage = &img_i11n; break;
-        case 141: newImage = &img_i13n; break;
-        case 178: newImage = &img_i50n; break;
+        case 139: newImage = &img_i11d; break;
+        case 141: newImage = &img_i13d; break;
+        case 178: newImage = &img_i50d; break;
         default:  newImage = &img_i50d; break;
     }
     return newImage;
