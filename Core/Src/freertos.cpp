@@ -56,7 +56,7 @@ uint8_t windDegrees;
 uint16_t windSpeed;
 
 osThreadId_t guiTaskHandle;
-const ThreadAttributes guiTask_attributes("guiTask", 1024 * 4, osPriorityNormal);
+const ThreadAttributes guiTask_attributes("guiTask", 2048 * 4, osPriorityNormal);
 
 osThreadId_t flashTaskHandle;
 const ThreadAttributes flashTask_attributes("flashTask", 256 * 4, osPriorityNormal);
@@ -114,6 +114,7 @@ void fillTemperatureBuffer();
 
 extern "C" void vApplicationTickHook(void) {
   ++taskTime;
+  lv_tick_inc(1);
 }
 void MX_FREERTOS_Init(void)
 {
@@ -153,11 +154,10 @@ void StartGUITask(void *argument)
   for (;;)
   {
 	  lv_timer_handler();
-    lv_tick_inc(1);
     ui_tick();
     //display.drawImage(0, 0, 160, 128, (const uint16_t *)(0x08000000 + shift));
     //shift += 0x10;
-    osDelay(1);
+    osDelay(5);
   }
 }
 

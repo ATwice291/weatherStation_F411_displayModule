@@ -74,6 +74,7 @@ extern uint16_t get_wind_direction();
 
 extern int8_t* get_var_temperatures();
 
+
 #ifdef __cplusplus
 }
 #endif
